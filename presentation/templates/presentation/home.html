@@ -1,0 +1,25 @@
+{% extends 'presentation/base.html' %}
+
+{% block tittle%} Mis proyectos {% endblock %}
+
+{%load static%}
+
+{% block content %} {% endblock %}
+
+{% block cuerpo %}
+
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container">
+          <img src="{% static 'presentation/img/home.png' %}" alt=""> 
+          <hr class="star-light">
+          <h2 class="font-weight-light mb-0">Isaias Barajas Garcia</h2>
+        </div>
+      </header>
+      
+      <div class="copyright py-4 text-center text-white">
+        <div class="container">
+          <small>Copyright &copy; Curso Django</small>
+        </div>
+      </div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'presentation/base.html' %}
+
+{% block tittle%} Contactos {% endblock %}
+
+{%load static%}
+
+{% block content %} {% endblock %}
+
+{% block cuerpo %}
+<div class="container">
+        <p></p>
+        <div class="row">
+            <div class="panel panel-primary filterable">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Users</h3>
+                    <div class="pull-right">
+                        <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                    </div>
+                </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Segundo Nombre</th>
+                            <th>Apellido Paterno</th>
+                            <th>Apellido Materno</th>
+                            <th>Tel.Casa</th>
+                            <th>Tel.Celular</th>
+                            <th>Email</th>
+                            <th>Twitter</th>
+                            <th>Web</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for contacto in contactos %}
+                            <tr>
+                                <td>{{contacto.nombre}}</td>
+                                <td>{{contacto.secNombre|default_if_none:""}}</td>
+                                <td>{{contacto.apellidoP}}</td>
+                                <td>{{contacto.apellidoM}}</td>
+                                <td>{{contacto.telCasa}}</td>
+                                <td>{{contacto.telCel|default_if_none:""}}</td>
+                                <td>{{contacto.email}}</td>
+                                <td>{{contacto.twitter|default_if_none:""}}</td>
+                                <td>{{contacto.pageWeb|default_if_none:""}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+{% endblock %}
